@@ -1,0 +1,53 @@
+
+{
+
+"aws_access_key_id": "blablabla",
+"aws_secret_access_key": "blablabla",
+"databases": [
+
+			{
+				"type": "MariaDB",
+				"user": "bobby",
+				"password": "glace11",
+				"ip": "192.168.1.13",
+				"port": "3306",
+				"BDD" : "Champignons"
+			},
+			{
+				"type": "MariaDB",
+				"user": "bobby",
+				"password": "glace11",
+				"ip": "192.168.1.13",
+				"port": "3306",
+				"BDD" : "Bonbons"
+
+			},
+			{
+				"type": "PostgreSQL",
+				"user": "postgres",
+				"password": "Btssio13.",
+				"ip": "192.168.1.4",
+				"port": "5432",
+				"BDD" : "pouloulou"
+
+			},
+			{
+				"type": "PostgreSQL",
+				"user": "postgres",
+				"password": "Btssio13.",
+				"ip": "192.168.1.4",
+				"port": "5432",
+				"BDD" : "pouetpouet"
+
+			},
+			{
+				"type": "SQLite",
+				"user": "fj",
+				"password": "btssio",
+				"ip": "192.168.1.73",
+				"port": "1433",
+				"BDD" : "bambou"
+			}
+			
+		]
+}
