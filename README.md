@@ -8,12 +8,14 @@ Sur votre machine qui exécutera votre script vous allez devoir installer les li
 apt install python3-pip
 apt install mysql
 apt install postgresql-client
-pip3 install sqlite-dump
 apt install paramiko
-pip3 install boto3
+pip3 install -r requirements.txt
 ```
+*Vous trouverez dans le fichier __requirements.txt__ toutes les librairies à installer via la commande __pip3__.*
 ___
 ## __Informations à renseigner pour le fichier JSON__
 Dans le fichier __info_srv_template.json__ vous allez pouvoir renseigner toutes les informations nécessaire à la connexion de vos serveurs de bases de données comme l'IP de votre serveur, le type de base de données que vous utilisez, l'identifiant de connexion et son mot de passe,... *etc*.
 ___
 ## __Modifications à apporter à vos serveurs__
+* __Si vous utilisez un serveur MYSQL / MariaDB__ : 
+    <br/>
