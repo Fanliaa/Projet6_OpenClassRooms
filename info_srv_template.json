@@ -1,52 +1,52 @@
 
 {
 
-"aws_access_key_id": "blablabla",
-"aws_secret_access_key": "blablabla",
+"aws_access_key_id": "Votre clé ID sur AWS",
+"aws_secret_access_key": "Votre clé privée AWS",
 "databases": [
 
 			{
 				"type": "MariaDB",
 				"user": "bobby",
-				"password": "glace11",
-				"ip": "192.168.1.13",
+				"password": "bobby",
+				"ip": "192.168.0.1",
 				"port": "3306",
-				"BDD" : "Champignons"
+				"BDD" : "Base1"
 			},
 			{
 				"type": "MariaDB",
 				"user": "bobby",
-				"password": "glace11",
-				"ip": "192.168.1.13",
+				"password": "bobby",
+				"ip": "192.168.0.1",
 				"port": "3306",
-				"BDD" : "Bonbons"
+				"BDD" : "Base2"
 
 			},
 			{
 				"type": "PostgreSQL",
-				"user": "postgres",
-				"password": "Btssio13.",
-				"ip": "192.168.1.4",
+				"user": "toto",
+				"password": "toto",
+				"ip": "192.168.0.2",
 				"port": "5432",
-				"BDD" : "pouloulou"
+				"BDD" : "Base1"
 
 			},
 			{
 				"type": "PostgreSQL",
-				"user": "postgres",
-				"password": "Btssio13.",
-				"ip": "192.168.1.4",
+				"user": "toto",
+				"password": "toto",
+				"ip": "192.168.0.2",
 				"port": "5432",
-				"BDD" : "pouetpouet"
+				"BDD" : "Base1"
 
 			},
 			{
 				"type": "SQLite",
-				"user": "fj",
-				"password": "btssio",
-				"ip": "192.168.1.73",
+				"user": "lola",
+				"password": "lola",
+				"ip": "192.168.0.3",
 				"port": "1433",
-				"BDD" : "bambou"
+				"BDD" : "Base1"
 			}
 			
 		]
