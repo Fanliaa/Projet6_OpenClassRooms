@@ -18,4 +18,11 @@ Dans le fichier __info_srv_template.json__ vous allez pouvoir renseigner toutes 
 ___
 ## __Modifications à apporter à vos serveurs__
 * __Si vous utilisez un serveur MYSQL / MariaDB__ : 
-    <br/>
+    <br/> Dans le fichier "__/etc/mysql/mariadb.conf.d/50-server.cnf__" vous pouvez y vérifier votre port d'écoute pour être sûr de pouvoir y accéder.
+
+* __Si vous utilisez un serveur PostgreSQL__ :
+    <br/> Dans le fichier "__/etc/postgresql/11/main/pg_hba.conf__" à la ligne "__IPV4 local connections__" rajoutez le réseau sur lequel se trouve votre serveur. *Par exemple :*
+    ```
+    host    all     all     192.168.1.0/24      md5
+    ```
+* __Si vous utilisez un serveur SQLite__ :
