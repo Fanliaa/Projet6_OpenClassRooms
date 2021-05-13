@@ -1,3 +1,5 @@
 # Liste des librairies à installer via pip3
 qlite-dump
 boto3
+awscli
+s3transfer

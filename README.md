@@ -36,4 +36,26 @@ ___
     Puis dans "__/etc/ssh/sshd_config__" vous pouvez vérifier le port d'écoute (*par défaut le port d'écoute est le 22*) ou modifier votre port.
     ___
     ## __Préparatif pour effectuer la sauvegarde Cloud vers AWS__
-    
+    Avant de commencer à installer le client AWS sur votre poste, pensez à créer un nouvel utilisateur sur votre compte AWS afin d'obtenir sa __Clé d'identification__ et sa __Clé d'identification privée__ qui seront très importante par la suite, donc notez bien ces clés. Vous pouvez également créer le dossier ou vous allez stocker vos fichier de sauvegarde, en pensant bien à donner les bon droit à votre nouvel utilisateur.
+
+    Une fois ceci fait, vous allez pouvoir télécharger le client AWS afin que votre script puisse envoyer correctement les ZIP des bases de données sauvegardées sur votre compte AWS.
+
+    Pour ce faire, vous allez devoir installer le client AWS sur votre machine exécutant le script Python:
+    ```
+    apt install curl
+    curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o "awscliv2.zip"
+    unzip awscliv2.zip
+    cd aws
+    ./install
+    ```
+    Maintenant que nous avons installé le client ASW, il va falloir le configurer.
+    ```
+    aws configure --profile nom_de_votre_profilAWS
+    ```
+    Ici vous allez donc devoir renseigner:
+    * Votre clé d'identification
+    * Votre clé d'identification privée
+    * La région ou ce trouve votre compte AWS
+    * Le format de sortie de vos fichier (*Vous pouvez mettre le format en JSON.*)
+  
+    <br/>*Les paquets __awscli__ et __s3transfer__ seront déjà installés lors de l'installation des paquets se trouvant dans le fichier __requirements.txt__.*
