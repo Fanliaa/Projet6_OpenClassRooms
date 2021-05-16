@@ -31,10 +31,11 @@ def upload_file(file_name, bucket, object_name=None):
     with open(infoJS, "r") as filejson:
 	    donnees = json.load(filejson)
 
-    # Téléchargement du fichier
+    # Informations client S3
     s3_client = boto3.client('s3',
                 aws_access_key_id=donnees["aws_access_key_id"],
                 aws_secret_access_key=donnees["aws_secret_access_key"])
+    # Permet de télécharger les fichiers que l'on souhaite et lesdéposer sur AWS
     try:
         response = s3_client.upload_file(file_name, bucket, object_name)
         print (response)
@@ -99,7 +100,7 @@ for server in donnees["databases"]:
 
     # Condition, boucler sur cette condition de connexion tant que c'est une BDD SQLite
     elif server["type"] == 'SQLite':
-        # Connexion au(s) server(s) pour sauvegarder la/les BDD
+        # Connexion au server pour sauvegarder la/les BDD
         ssh_client=paramiko.SSHClient()
         ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh_client.connect(server["ip"], 22, server["user"], server["password"])
@@ -109,8 +110,8 @@ for server in donnees["databases"]:
         ssh_client.exec_command('.dump')
         ftp_client=ssh_client.open_sftp()
         ftp_client.get("/tmp/dump.sql", "" + BACKUP_PATH + "/" + server["BDD"] + ".sql")
-        ssh_client.exec_command('rm /tmp/dump.sql')
         ftp_client.close()
+        ssh_client.close()
         print("La sauvegarde de la base de donnée " + server["BDD"] + " a bien été effectuée.")
         zf = zipfile.ZipFile (FILE_SQLITE + server["BDD"] + ".zip", mode='w')
         try:
